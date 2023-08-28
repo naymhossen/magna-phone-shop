@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magna Dokan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-300">
+    <header></header>
+    <main class="container">
+      <h1 class="text-7xl font-bold text-center pt-10">Magna Phone Shop</h1>
+
+      <section>
+        <div class="items-center justify-center flex gap-4 mt-8">
+          <input
+            id="search-feild"
+            type="text"
+            placeholder="Search your phone"
+            class="input input-bordered input-warning w-full max-w-xs"
+          />
+          <button onclick="handleSearch()" class="btn btn-error">Search</button>
+        </div>
+
+        <!-- phones container -->
+
+        <!-- loder -->
+
+        <div id="loding-spinner" class="text-center my-20 hidden">
+          <span class="loading loading-bars loading-md"></span>
+        </div>
+
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-5 p-4 gap-5"
+        ></div>
+        <div id="show-all-container" class="hidden text-center my-8">
+          <button onclick="handelShowAll()" class="btn btn-error">
+            Show All..
+          </button>
+        </div>
+      </section>
+
+      <!-- show details modeal box -->
+
+      <section>
+        <dialog id="show_details_modeal" class="modal modal-bottom sm:modal-middle">
+          <form method="dialog" class="modal-box">
+
+            <div id="display-modeal-info">
+
+            </div>
+
+            <div class="modal-action">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn btn-primary">Close</button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
