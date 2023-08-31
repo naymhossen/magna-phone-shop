@@ -11,16 +11,6 @@ const disPlayPhones = (phones, isShowAll) => {
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
 
-    /* SEARCH CONDETION */
-    // const noDataMessage = document.getElementById('no-data-message');
-    // if (phones.length === 0) {
-    //     console.log('No Data Available');
-    // } else {
-    //     console.log(phones);
-    // }
-
-  
-
     const showAllContainer = document.getElementById('show-all-container');
     if(phones.length > 12 && !isShowAll){
         showAllContainer.classList.remove('hidden')
@@ -36,6 +26,14 @@ const disPlayPhones = (phones, isShowAll) => {
     if(!isShowAll){
         phones = phones.slice(0, 12);
     }
+    if (phones.length === 0) {
+            console.log('No Data Available');
+            document.getElementById('search-condition').classList.remove('hidden')
+        } else {
+            console.log(phones);
+            document.getElementById('search-condition').classList.add('hidden')
+        }
+
 
     phones.forEach(phone => {
         // console.log(phone);
@@ -90,7 +88,7 @@ const showPhoneDetailes = (phone) =>{
     <h2> <span>Storage: </span> ${phone?.slug}</h2>
     <h2> <span>Storage: </span> ${phone?.releaseDate}</h2>
     <h2><span>Brand: </span>${phone?.brand}</h2>
-    <h2><span>GPS: </span>${phone?.others?.GPS}</h2>
+    <h2><span>GPS: </span>${phone?.others?.GPS || 'No GPS Available'}</h2>
     `;
 }
 
